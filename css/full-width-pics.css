@@ -69,3 +69,21 @@ input[type="password"] {
  	border-top-right-radius: 0;
 }
 }
+
+.labels {
+	width: 220px;
+	height: 30px;
+	float: left;
+	margin: 30px;
+}
+
+.tabla {
+	border: 1px solid grey;
+	
+}
+
+#borde {
+	height: 400px;
+	width: 900px;
+}
+
