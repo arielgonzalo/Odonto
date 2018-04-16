@@ -21,14 +21,12 @@
       <div class="container">
         <a class="navbar-brand" href="#">DentalCo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <span class="navbar-tog        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#">Inicio
-                <span class="sr-only">(current)</span>
-              </a>
+                <span class="sr-only              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Pacientes</a>
@@ -52,44 +50,70 @@
     <!-- Cuerpo principal -->
     <section class="py-5">
       <div class="container">
+
+
+        <!-- Modal -->
+        <div id="dataInsert" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                |
+                <h5 id="modalTitle" class="modal-title">Estado de la pieza dental</h5>
+              </div>
+              <div class="modal-body">
+                <p>Aquí el formulario</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success" onclick="addToDb()" >Guardar</button>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
         <img src="./img/map.png" width="385" height="603" alt="Teeth" usemap="#dentalmap">
 
         <map name="dentalmap">
-          <area shape="circle" data-toggle="tooltip" title="1" coords="46,256,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="2" coords="50,214,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="3" coords="58,168,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="4" coords="72,132,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="5" coords="87,101,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="6" coords="101,70,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="7" coords="130,50,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="8" coords="170,40,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="9" coords="215,40,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="10" coords="256,50,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="11" coords="285,70,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="12" coords="300,102,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="13" coords="310,132,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="14" coords="327,170,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="15" coords="335,215,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="16" coords="335,256,15" href="#" >
-
-          <area shape="circle" data-toggle="tooltip" title="17" coords="60,375,12" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="18" coords="72,410,12" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="19" coords="84,450,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="20" coords="95,490,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="21" coords="105,517,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="22" coords="123,545,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="23" coords="153,560,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="24" coords="180,571,8" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="25" coords="203,40,8" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="26" coords="230,560,8" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="27" coords="260,545,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="28" coords="275,517,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="29" coords="285,490,10" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="30" coords="300,450,15" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="31" coords="312,410,12" href="#" >
-          <area shape="circle" data-toggle="tooltip" title="32" coords="330,375,12" href="#" >
           
-        </map>     
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="1" coords="46,256,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="2" coords="50,214,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="3" coords="58,168,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="4" coords="72,132,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="5" coords="87,101,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="6" coords="101,70,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="7" coords="130,50,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="8" coords="170,40,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="9" coords="215,40,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="10" coords="256,50,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="11" coords="285,70,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="12" coords="300,102,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="13" coords="310,132,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="14" coords="327,170,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="15" coords="335,215,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="16" coords="335,256,15" href="#" >          
+          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="17" coords="60,375,12" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="18" coords="72,410,12" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="19" coords="84,450,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="20" coords="95,490,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="21" coords="105,517,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="22" coords="123,545,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="23" coords="153,560,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="24" coords="180,571,8" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="25" coords="203,40,8" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="26" coords="230,560,8" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="27" coords="260,545,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="28" coords="275,517,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="29" coords="285,490,10" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="30" coords="300,450,15" href="#" >          
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="31" coords="312,410,12" href="#" >            
+            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="32" coords="330,375,12" href="#" >        </map>     
 
       </div>
     </section>
@@ -111,9 +135,27 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      $(document).ready(function(){
+      $(document).ready(
+        function(){
           $('[data-toggle="tooltip"]').tooltip(); 
-      });
+        }
+
+        
+      );
+
+      function toggleModal(element){
+       //var title = 'holo' + element.getAttribute('title');
+        //$("#modalTitle").text(title);
+        $('#dataInsert').modal('show');
+      }
+
+      function addToDb(){
+          alert('Pendiente de programar el método de guardado!')
+          $('#dataInsert').modal('hide');
+          
+      }
+
+
     </script>
 
   </body>
