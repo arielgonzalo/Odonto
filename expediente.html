@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Expediente</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/full-width-pics.css" rel="stylesheet">
+    
+    
+
+  </head>
+
+  <body>
+
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="main.html">DentalCo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Inicio</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Pacientes
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>            
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cerrar sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Imagen superior -->
+    <header class="py-5 bg-image-full" style="background-image: url('./img/top.jpg');">
+    </header>
+
+    <!-- Form para el Paciente -->
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post" action="map.html">
+                    <fieldset>
+                        <legend class="text header">Información dental</legend>
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="Nombre del médico" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="Última visita" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Condición del paciente</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Excelente</option>
+                                  <option value="mercedes">Buena</option>
+                                  <option value="bad">Regular</option>
+                                  <option value="worse">Mala</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="¿El paciente esta bajo tratamiento médico?" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="¿Toma algun medicamente?" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="¿Tiene alguna alegia?" class="form-control">
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>¿Le sangran las encías al cepillarse?</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>¿Ha recibido tratamiento de ortodoncial (frenos en los dientes)?</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>¿Tiene los dientes sensitivos al frío, calor, dulce ó presión?</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>¿Tiene dolores de oído o de cuello?</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>¿Ha recibido tratamiento periodontal (de las encías)</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>¿Usa aparatos(prótesis) dentales removibles?</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>¿Ha tenido alguna dificultad seria asociada con cualquier tratamiento dental anteriormente?</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>                        
+                        </br>
+                        </br>
+                        <legend class="text header">Información médica</legend>
+                        
+                      <h5>¿Ha tenido alguna de las siguientes enfermedades o problemas?</h5> 
+                      </br>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Tuberculosis activa</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Tos persistente por más de tres semanas.</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Tos que produce sangre</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Diabetes</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Presión alta/baja</h5>
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Dificultad para respirar</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Abuso de alcohol/drogas</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Problemas renales</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Artritis</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Asma</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Defectos congénicos</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Glaucoma</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Dolor de cabeza severo</h5>
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Epilepsia/convulsiones</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>Sinusitis</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <h5>VIH SIDA</h5>                              
+                                <select>
+                                  <option value="volvo">Seleccionar</option>
+                                  <option value="saab">Si</option>
+                                  <option value="mercedes">No</option>
+                                </select>
+                                </br>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text">
+                                <button type="submit" class="btn btn-primary btn-lg">Continuar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+            
+    <!-- Imagen inferior -->
+    <section class="py-5 bg-image-full" style="background-image: url('./img/botton.jpg');">      
+      <div style="height: 200px;"></div>
+    </section>
+
+    <!-- Parte inferior -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; DentalCo 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
