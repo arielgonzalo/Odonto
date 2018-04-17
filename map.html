@@ -69,23 +69,12 @@
 
                  <form class="form-horizontal" method="post">
                     <fieldset>
-                        <legend class="text header">Diagnóstico:</legend>
-
-                        <div class="form-group">
-                            <div class="col-md-8">
-                                <textarea id="diagnostico" name="diagnostico" class="form-control"></textarea>
-                            </div>
-                        </div>
-
+                        
                         <legend class="text header">Tratamiento recomendado:</legend>
 
                         <div class="form-group">
                             <div class="col-md-8">
-                                <textarea id="diagnostico" name="diagnostico" class="form-control"></textarea>
-                              </br>
-                              <div class="checkbox">
-                                <label><input type="checkbox" value="">Tratamiento iniciado.</label>
-                              </div>
+                                <textarea id="TXtratamiento" name="tratamiento" class="form-control"></textarea>
                               </br>
 
                               <label>Próxima cita: <input type="text" class="form-control" id="datepicker"></label>                              
@@ -192,7 +181,28 @@
       }
 
       function addToDb(){
-          alert('Pendiente de programar el método de guardado!')
+          
+      trabajo = {
+        Tratamiento: $("#Txttratamiento").val(),
+        IdDiente: '1',//$("#TxtNombre").val(),
+        IdProtesis: '2',//$("#TxtApellido1").val(),
+        IdExpediente: '3',//$("#TxtApellido2").val(),
+      }
+      $.ajax({
+        url: "funciones.php",
+        type: "POST",
+        //Metodo es una forma de interactuar con el servidor
+        data: {Metodo:"AgregarTrabajo", Objeto: JSON.stringify(trabajo)},
+        dataType: "JSON",
+        success: function(d){
+          alert("Guardado exitosamente!");
+        },
+        error: function(e){
+          alert("Bahhh errrorando!");
+          console.log(e);
+        }
+      })
+    
           $('#dataInsert').modal('hide');
           
       }

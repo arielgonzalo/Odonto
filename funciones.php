@@ -63,10 +63,35 @@ function AgregarPaciente(){
 
 }
 
+function AgregarTrabajo(){
+	global $Conexion;
+	ConectarBD();
+	//prepare = de forma preconfigurada, manda una sentencia al servidor pero no lo ejecuta
+	//? es una variable de macrosustitucion que despues se sustituye con los valores reales
+	$sentencia = $Conexion -> prepare("Insert into trabajorealizado (Tratamiento, Diente_idDiente, Protesis_idProtesis, Expediente_idExpediente) values (?,?,?,?)");
+	//como parametro, es el tipo de dato de los valores, despues darle nombre a cada espacio
+	//bind_param asocia cada variable que tengo que macrosustituir con una variable php
+	$sentencia -> bind_param('siii', $P1, $P2, $P3, $P4);
+	$parametros = json_decode($_POST['Objeto']);
+	$P1 = $parametros ->{'Tratamiento'};
+	$P2 = $parametros ->{'IdDiente'};
+	$P3 = $parametros ->{'IdProtesis'};
+	$P4 = $parametros ->{'IdExpediente'};
+	$sentencia -> execute();
+	$ObjRetorno = array('Resultado' => true);
+	$sentencia -> close();
+	$Conexion -> close();
+	echo json_encode($ObjRetorno,JSON_FORCE_OBJECT);
+
+}
+
 switch ($_POST['Metodo']) {
 	case 'MtoAgregar':
 		AgregarPersona();
 		AgregarPaciente();
+		break;
+	case 'AgregarTrabajo':
+		AgregarTrabajo();
 		break;
 	default:
 		# code...
