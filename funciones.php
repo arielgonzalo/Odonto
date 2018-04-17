@@ -130,6 +130,27 @@ function AgregarTrabajo(){
 
 }
 
+function ConsultarTratamiento(){
+	global $Conexion;
+	ConectarBD();
+	//La sentencia que le quiero mandar a la base de datos
+	$sql = $Conexion -> prepare("SELECT last 1 FROM trabajorealizado where diente = ?");
+	//Variable para guardar los datos de ese sentencia sql cuyo parametro es la variable de conexion
+	$sql -> bind_param('s', $P1);
+	$parametros = json_decode($_POST['Objeto']);
+	$P1 = $parametros ->{'diente'};
+	$Resultado = mysqli_query($Conexion,$sql);
+	//mysqli_fetch_object(#Resultado) = devuelve una tabla
+	//mysqli_fetch_array(#Resultado) = devuelve un arreglo
+	//mysqli_fetch_assoc(#Resultado) = devuelve un arreglo asociativo; por ejemplo, array("IdEmpleado" => 1, "NombreEmpleado" => "Carlos")
+	while($obj = mysqli_fetch_object($Resultado)){
+		echo($obj->Tratamiento
+		);
+	}
+	mysqli_free_result($Resultado);
+	mysqli_close($Conexion);
+}
+
 switch ($_POST['Metodo']) {
 	case 'MtoAgregar':
 		AgregarPersona();
@@ -139,6 +160,9 @@ switch ($_POST['Metodo']) {
 		break;
 	case 'AgregarTrabajo':
 		AgregarTrabajo();
+		break;
+		case 'ConsultarTratamiento':
+		ConsultarTratamiento();
 		break;
 	default:
 

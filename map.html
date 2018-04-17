@@ -162,6 +162,7 @@
     <script>
 
       var diente;
+      var tratamiento = '';
 
       $( function() {
         $( "#datepicker" ).datepicker();
@@ -179,6 +180,7 @@
       function toggleModal(element){
         var title = element.getAttribute('name');
         diente = element.getAttribute('numDiente');
+        $("#TXttratamiento").val(tratamiento);
         $("#modalTitle").text(title);
         $('#dataInsert').modal('show');
       }
@@ -201,7 +203,7 @@
           alert("Guardado exitosamente!");
         },
         error: function(e){
-          alert("Bahhh errrorando!");
+          
           console.log(e);
         }
       })
@@ -209,6 +211,23 @@
           $('#dataInsert').modal('hide');
           
       }
+
+      function ConsultarTratamiento(){
+          $.ajax({
+            url: "funciones.php",
+            type: "POST",
+            data: {Metodo:"MtoTratamiento", diente},
+            dataType: "text",
+            //d representa lo que manda el servidor.
+            success: function(d){
+              //$("#Respuesta").html("<h>" +d+ "</h>");
+              tratamiento = d;
+            },
+            error: function(e){
+              tratamiento = '';
+            }
+          })
+        }
 
 
     </script>
