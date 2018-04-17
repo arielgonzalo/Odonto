@@ -69,3 +69,15 @@ input[type="password"] {
  	border-top-right-radius: 0;
 }
 }
+
+.labels {
+	width: 400px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+}
+
+.labels1 {
+	width: 400px;
+	height: 500px;	
+}
