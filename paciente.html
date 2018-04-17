@@ -55,67 +55,70 @@
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" method="post">
                     <fieldset>
                         <legend class="text header">Información del Paciente</legend>
 
                         <div class="form-group">
                             <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Cédula de Identificación" class="form-control">
+                                <input id="TxtCedula" name="id" type="text" placeholder="Cédula de Identificación" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+                                <input id="TxtNombre" name="name" type="text" placeholder="Nombre" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Primer Apellido" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Segundo Apellido" class="form-control">
+                                <input id="TxtApellido1" name="lastname1" type="text" placeholder="Primer Apellido" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Fecha de Nacimiento" class="form-control">
+                                <input id="TxtApellido2" name="lastname2" type="text" placeholder="Segundo Apellido" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input id="TxtFechaNacimiento" name="birthdate" type="text" placeholder="Fecha de Nacimiento (YYYYMMDD)" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Número de Teléfono" class="form-control">
+                                <input id="TxtFechaIngresado" name="firstday" type="text" placeholder="Fecha Ingresado (YYYYMMDD)" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input id="TxtTelefono" name="telephone" type="text" placeholder="Número de Teléfono" class="form-control">
                               </br>
-                                <select>
-                                  <option value="volvo">Personal</option>
-                                  <option value="saab">Trabajo</option>
-                                  <option value="mercedes">Hogar</option>
+                                <select class="combobox" id="tipotelefono">
+                                  <option value="Personal">Personal</option>
+                                  <option value="Trabajo">Trabajo</option>
+                                  <option value="Hogar">Hogar</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Correo Electrónico" class="form-control">
+                                <input id="TxtCorreo" name="name" type="text" placeholder="Correo Electrónico" class="form-control">
                               </br>
-                                <select>
-                                  <option value="volvo">Personal</option>
-                                  <option value="saab">Trabajo</option>
-                                  <option value="mercedes">Hogar</option>
+                                <select class="combobox" id="tipocorreo">
+                                  <option value="Personal">Personal</option>
+                                  <option value="Trabajo">Trabajo</option>
+                                  <option value="Hogar">Hogar</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-12 text">
-                                <button type="submit" class="btn btn-primary btn-lg">Agregar Paciente</button>
+                                <button type="button" class="btn btn-primary btn-lg" id="BtnAgregarPer">Agregar</button>
                             </div>
                         </div>
                     </fieldset>
-                </form>
             </div>
         </div>
     </div>
@@ -136,6 +139,63 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+    //Este metodo agrega Persona
+    function AgregarPersona(){
+      persona = {
+        IdPersona: $("#TxtCedula").val(),
+        Nombre: $("#TxtNombre").val(),
+        Apellido1: $("#TxtApellido1").val(),
+        Apellido2: $("#TxtApellido2").val(),
+        FechaNacimiento: $("#TxtFechaNacimiento").val(),
+      }
+      $.ajax({
+        url: "funciones.php",
+        type: "POST",
+        //Metodo es una forma de interactuar con el servidor
+        data: {Metodo:"MtoAgregar", Objeto: JSON.stringify(persona)},
+        dataType: "JSON",
+        success: function(d){
+          alert("Guardado exitosamente la Persona");
+        },
+        error: function(e){
+          console.log(e);
+        }
+      })
+    }
+
+    //Este metodo agrega Paciente
+    function AgregarPaciente(){
+      paciente = {
+        FechaIngresado: $("#TxtFechaIngresado").val(),
+        Activo: true,
+        IdPersona: $("#TxtCedula").val()
+      }
+      $.ajax({
+        url: "funciones.php",
+        type: "POST",
+        //Metodo es una forma de interactuar con el servidor
+        data: {Metodo:"MtoAgregar", Objeto: JSON.stringify(paciente)},
+        dataType: "JSON",
+        success: function(d){
+          alert("Guardado exitosamente como Paciente");
+        },
+        error: function(e){
+          console.log(e);
+        }
+      })
+    }
+
+    $(document).ready(function(){
+      $('#BtnAgregarPer').click(function(){
+        AgregarPersona();
+        AgregarPaciente();
+      });
+    })
+
+  </script>
 
   </body>
 
