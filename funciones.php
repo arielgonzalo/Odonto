@@ -42,7 +42,7 @@ function AgregarPersona(){
 	echo json_encode($ObjRetorno,JSON_FORCE_OBJECT);
 }
 
-function AgregarPaciente(){
+function AgregarCliente(){
 	global $Conexion;
 	ConectarBD();
 	//prepare = de forma preconfigurada, manda una sentencia al servidor pero no lo ejecuta
@@ -60,7 +60,50 @@ function AgregarPaciente(){
 	$sentencia -> close();
 	$Conexion -> close();
 	echo json_encode($ObjRetorno,JSON_FORCE_OBJECT);
+}
 
+function AgregarTelefono(){
+	global $Conexion;
+	ConectarBD();
+	//prepare = de forma preconfigurada, manda una sentencia al servidor pero no lo ejecuta
+	//? es una variable de macrosustitucion que despues se sustituye con los valores reales
+	$sentencia = $Conexion -> prepare("Insert into telefono (IdTelefono, FechaIngresado, Activo, IdPersona, IdTipoTelefono) values (?,?,?,?,?)");
+	//como parametro, es el tipo de dato de los valores, despues darle nombre a cada espacio
+	//bind_param asocia cada variable que tengo que macrosustituir con una variable php
+	$sentencia -> bind_param('ssisi', $P1, $P2, $P3, $P4, $P5);
+	$parametros = json_decode($_POST['Objeto']);
+	$P1 = $parametros ->{'IdTelefono'};
+	$P2 = $parametros ->{'FechaIngresado'};
+	$P3 = $parametros ->{'Activo'};
+	$P4 = $parametros ->{'IdPersona'};
+	$P5 = $parametros ->{'IdTipoTelefono'};
+	$sentencia -> execute();
+	$ObjRetorno = array('Resultado' => true);
+	$sentencia -> close();
+	$Conexion -> close();
+	echo json_encode($ObjRetorno,JSON_FORCE_OBJECT);
+}
+
+function AgregarCorreo(){
+	global $Conexion;
+	ConectarBD();
+	//prepare = de forma preconfigurada, manda una sentencia al servidor pero no lo ejecuta
+	//? es una variable de macrosustitucion que despues se sustituye con los valores reales
+	$sentencia = $Conexion -> prepare("Insert into correo (IdCorreo, FechaIngresado, Activo, IdPersona, IdTipoCorreo) values (?,?,?,?,?)");
+	//como parametro, es el tipo de dato de los valores, despues darle nombre a cada espacio
+	//bind_param asocia cada variable que tengo que macrosustituir con una variable php
+	$sentencia -> bind_param('ssisi', $P1, $P2, $P3, $P4, $P5);
+	$parametros = json_decode($_POST['Objeto']);
+	$P1 = $parametros ->{'IdCorreo'};
+	$P2 = $parametros ->{'FechaIngresado'};
+	$P3 = $parametros ->{'Activo'};
+	$P4 = $parametros ->{'IdPersona'};
+	$P5 = $parametros ->{'IdTipoCorreo'};
+	$sentencia -> execute();
+	$ObjRetorno = array('Resultado' => true);
+	$sentencia -> close();
+	$Conexion -> close();
+	echo json_encode($ObjRetorno,JSON_FORCE_OBJECT);
 }
 
 function AgregarTrabajo(){
@@ -88,7 +131,9 @@ function AgregarTrabajo(){
 switch ($_POST['Metodo']) {
 	case 'MtoAgregar':
 		AgregarPersona();
-		AgregarPaciente();
+		AgregarCliente();
+		AgregarTelefono();
+		AgregarCorreo();
 		break;
 	case 'AgregarTrabajo':
 		AgregarTrabajo();

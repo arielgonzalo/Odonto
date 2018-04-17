@@ -94,10 +94,10 @@
                             <div class="col-md-8">
                                 <input id="TxtTelefono" name="telephone" type="text" placeholder="Número de Teléfono" class="form-control">
                               </br>
-                                <select class="combobox" id="tipotelefono">
-                                  <option value="Personal">Personal</option>
-                                  <option value="Trabajo">Trabajo</option>
-                                  <option value="Hogar">Hogar</option>
+                                <select class="combobox" id="tipotelefono" style="width:100px;">
+                                  <option value="1">Personal</option>
+                                  <option value="2">Trabajo</option>
+                                  <option value="3">Hogar</option>
                                 </select>
                             </div>
                         </div>
@@ -105,10 +105,10 @@
                             <div class="col-md-8">
                                 <input id="TxtCorreo" name="name" type="text" placeholder="Correo Electrónico" class="form-control">
                               </br>
-                                <select class="combobox" id="tipocorreo">
-                                  <option value="Personal">Personal</option>
-                                  <option value="Trabajo">Trabajo</option>
-                                  <option value="Hogar">Hogar</option>
+                                <select class="combobox" id="tipocorreo" style="width:100px;">
+                                  <option value="1">Personal</option>
+                                  <option value="2">Trabajo</option>
+                                  <option value="3">Hogar</option>  
                                 </select>
                             </div>
                         </div>
@@ -166,9 +166,9 @@
       })
     }
 
-    //Este metodo agrega Paciente
-    function AgregarPaciente(){
-      paciente = {
+    //Este metodo agrega Paciente/Cliente
+    function AgregarCliente(){
+      cliente = {
         FechaIngresado: $("#TxtFechaIngresado").val(),
         Activo: true,
         IdPersona: $("#TxtCedula").val()
@@ -177,7 +177,7 @@
         url: "funciones.php",
         type: "POST",
         //Metodo es una forma de interactuar con el servidor
-        data: {Metodo:"MtoAgregar", Objeto: JSON.stringify(paciente)},
+        data: {Metodo:"MtoAgregar", Objeto: JSON.stringify(cliente)},
         dataType: "JSON",
         success: function(d){
           alert("Guardado exitosamente como Paciente");
@@ -189,10 +189,60 @@
       })
     }
 
+    //Este metodo agrega Telefono
+    function AgregarTelefono(){
+      telefono = {
+        IdTelefono: $("#TxtTelefono").val(),
+        FechaIngresado: $("#TxtFechaIngresado").val(),
+        Activo: true,
+        IdPersona: $("#TxtCedula").val(),
+        IdTipoTelefono: $("#tipotelefono").val()
+      }
+      $.ajax({
+      url: "funciones.php",
+      type: "POST",
+      //Metodo es una forma de interactuar con el servidor
+      data: {Metodo:"MtoAgregar", Objeto: JSON.stringify(telefono)},
+      dataType: "JSON",
+      success: function(d){
+        alert("Guardado exitosamente el Telefono");
+      },
+      error: function(e){
+        console.log(e);
+      }
+      }) 
+    }
+
+    //Este metodo agrega Correo
+    function AgregarCorreo(){
+      correo = {
+        IdCorreo: $("#TxtCorreo").val(),
+        FechaIngresado: $("#TxtFechaIngresado").val(),
+        Activo: true,
+        IdPersona: $("#TxtCedula").val(),
+        IdTipoCorreo: $("#tipocorreo").val()
+      }
+      $.ajax({
+      url: "funciones.php",
+      type: "POST",
+      //Metodo es una forma de interactuar con el servidor
+      data: {Metodo:"MtoAgregar", Objeto: JSON.stringify(correo)},
+      dataType: "JSON",
+      success: function(d){
+        alert("Guardado exitosamente el Telefono");
+      },
+      error: function(e){
+        console.log(e);
+      }
+      }) 
+    }
+
     $(document).ready(function(){
       $('#BtnAgregarPer').click(function(){
         AgregarPersona();
-        AgregarPaciente();
+        AgregarCliente();
+        AgregarTelefono();
+        AgregarCorreo();
       });
     })
 
