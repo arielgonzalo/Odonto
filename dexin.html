@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Nombre de la sección</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/full-width-pics.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">DentalCo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="main.html">Inicio
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pacientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Expedientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cerrar sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Imagen superior -->
+    <header class="py-5 bg-image-full" style="background-image: url('./img/top.jpg');">
+      <!-- La linea de abajo es el logo  -->
+      <img class="img d-block mx-auto" src="./img/dentalco_logo.png" alt="">
+    </header>
+
+    <!-- Cuerpo principal - Agregar los componentes abajo -->
+
+    <HTML>
+
+<HEAD>
+  
+</HEAD>
+<br><br>
+
+<img src="file:///C:/wamp64/www/Odonto-master/img/dentalco_logo.png"/>
+
+<BODY BACKGROUND="claymore-wallpaper-04.gif">
+
+
+<center><table width="600" border="0" cellspacing="2" cellpadding="1">
+
+ <tr><td></td>
+
+      <td width="192"><div align="right"><font color="blue">NOMBRE:</div></td>
+
+      <td align="left"><input name="nombre" type="text"  size="30" tabindex="7" style="background-color: #CCCCCC; color: #000000; border: 0 "></td>
+
+    </tr>
+
+ <tr><td></td>
+
+      <td width="192"><div align="right"><font color="blue">Direccion:</div></td>
+
+      <td align="left"><input name="direccion" type="text"  size="50" tabindex="7" style="background-color: #CCCCCC; color: #000000; border: 0 "></td>
+
+    </tr> 
+
+   <tr><td></td>
+
+      <td width="192"><div align="right"><font color="blue">Telefono :</div></td>
+
+      <td align="left"><input name="telefono" type="text"  size="25" tabindex="9" style="background-color: #CCCCCC; color: #000000; border: 3 "></td>
+
+    </tr>
+
+    <tr><td></td>
+
+        <td width="192"><div align="right"><font color="blue">Correo 
+
+        electronico:</div></td>
+
+      <td align="left"><input name="correo" type="text" id="email" size="34" tabindex="10" style="background-color: #CCCCCC; color: #000000; border: 3 "></td>
+
+    </tr>
+
+       <tr><td></td>
+
+        <td width="192"><div align="right"><font color="blue">fecha 
+
+         :</div></td>
+
+      <td align="left"><input name="fecha" type="text" id="email" size="12" tabindex="10" style="background-color: #CCCCCC; color: #000000; border: 3 "></td>
+
+    </tr>
+
+<tr><td></td>
+
+        <td width="192"><div align="right"><font color="blue">Nº 
+
+         factura :</div></td>
+
+      <td align="left"><input name="factura" type="text" id="factura" size="10" tabindex="10" style="background-color: #CCCCCC; color: #000000; border: 3 "></td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<br>
+
+<form action="<?php echo $_SERVER['PHP_SELF'];?>"method="post">
+
+<table align=center border=4 cellpadding=5 cellspacing=6 >
+
+<tr><td colspan=2 align=center><font color="blue"> Tratamiento de frenos: </td>
+
+<td colspan=2 align=center>
+
+<select name="op1">
+
+<option value="1">Limpieza</option>
+
+<option value="2">Cambio de ligas</option>
+
+<option value="3">Ajuste de tornillos</option>
+
+</select>
+
+</td></tr>
+
+<tr><td colspan=2 align=center><font color="blue">Tratamiento de nervio: </td>
+
+<td colspan=2 align=center>
+
+<select name="op2">
+
+<option value="1">Incisivo</option>
+
+<option value="2">Canino</option>
+
+<option value="3">Molar</option>
+
+<option value="4">Premolar</option>
+
+</select>
+
+</td></tr>
+
+<td colspan=2 align=center><font color="blue">Extración</td>  
+
+<td colspan=2 align=center>
+
+<select name="op3">
+
+<option value="1">Incisivo</option>
+
+<option value="2">Canino </option>
+
+<option value="3">Molar</option>
+
+<option value="4">Premolar</option>
+
+
+</select>
+
+</td></tr>
+
+<td colspan=2 align=center><font color="blue">Calcificación</td>
+
+<td colspan=2 align=center>
+
+<select name="op4">
+
+<option value="1">Incisivo</option>
+
+<option value="2">Canino </option>
+
+<option value="3">Molar</option>
+
+<option value="4">Premolar</option>
+
+</select>
+
+</td></tr>
+
+<td colspan=2 align=center><font color="blue">Tratamiento de protesis</td>
+
+<td colspan=2 align=center>
+
+<select name="op5">
+
+<option value="1"> Limpieza </option>
+
+<option value="2">Cambio de protesis </option>
+
+<option value="3"> Puentes </option>
+
+<option value="4"> Coronas </option>
+
+</select>
+
+</td></tr>
+
+<tr><TD colspan=4 ALIGN=CENTER><input type="submit" value="Cotizar">
+
+</TD></tr></table></center>
+
+</form>
+
+<br><br>
+
+</BODY>
+
+</HTML>
+    
+
+
+
+
+    <!-- Imagen inferior -->
+    <section class="py-5 bg-image-full" style="background-image: url('./img/botton.jpg');">      
+      <div style="height: 200px;"></div>
+    </section>
+
+    <!-- Parte inferior -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; DentalCo 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
