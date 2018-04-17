@@ -9,6 +9,7 @@
     <meta name="author" content="">
 
     <title>DentalCo</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/full-width-pics.css" rel="stylesheet">
 
@@ -60,11 +61,43 @@
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
-                |
+                
                 <h5 id="modalTitle" class="modal-title">Estado de la pieza dental</h5>
               </div>
               <div class="modal-body">
-                <p>Aquí el formulario</p>
+                
+
+                 <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <legend class="text header">Diagnóstico:</legend>
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <textarea id="diagnostico" name="diagnostico" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <legend class="text header">Tratamiento recomendado:</legend>
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <textarea id="diagnostico" name="diagnostico" class="form-control"></textarea>
+                              </br>
+                              <div class="checkbox">
+                                <label><input type="checkbox" value="">Tratamiento iniciado.</label>
+                              </div>
+                              </br>
+
+                              <label>Próxima cita: <input type="text" class="form-control" id="datepicker"></label>                              
+                              
+                        </div>
+                        
+
+                        
+                    </fieldset>
+                </form>
+
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -81,40 +114,41 @@
         <img src="./img/map.png" width="385" height="603" alt="Teeth" usemap="#dentalmap">
 
         <map name="dentalmap">
-          
-            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="1" coords="46,256,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="2" coords="50,214,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="3" coords="58,168,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="4" coords="72,132,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="5" coords="87,101,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="6" coords="101,70,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="7" coords="130,50,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="8" coords="170,40,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="9" coords="215,40,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="10" coords="256,50,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="11" coords="285,70,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="12" coords="300,102,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="13" coords="310,132,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="14" coords="327,170,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="15" coords="335,215,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="16" coords="335,256,15" href="#" >          
-          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="17" coords="60,375,12" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="18" coords="72,410,12" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="19" coords="84,450,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="20" coords="95,490,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="21" coords="105,517,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="22" coords="123,545,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="23" coords="153,560,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="24" coords="180,571,8" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="25" coords="203,40,8" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="26" coords="230,560,8" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="27" coords="260,545,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="28" coords="275,517,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="29" coords="285,490,10" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="30" coords="300,450,15" href="#" >          
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="31" coords="312,410,12" href="#" >            
-            <area shape="circle" onclick="toggleModal()" data-toggle="tooltip" title="32" coords="330,375,12" href="#" >        </map>     
+        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Superior 1" name="Molar Superior 1" coords="46,256,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Superior 2" name="Molar Superior 2 " coords="50,214,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Superior 3" name="Molar Superior 3" coords="58,168,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Superior 1" name="Premolar Superior 1" coords="72,132,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Superior 2" name="Premolar Superior 2" coords="87,101,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Canino Superior 1" name="Canino Superior 1" coords="101,70,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Superior 1" name="Incisivo Superior 1" coords="130,50,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Superior 2" name="Incisivo Superior 2" coords="170,40,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Superior 3" name="Incisivo Superior 3" coords="215,40,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Superior 4" name="Incisivo Superior 4" coords="256,50,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Canino Superior 2" name="Canino Superior 2" coords="285,70,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Superior 3" name="Premolar Superior 3" coords="300,102,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Superior 4" name="Premolar Superior 4" coords="310,132,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Superior 4" name="Molar Superior 4" coords="327,170,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Superior 5" name="Molar Superior 5" coords="335,215,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Superior 6" name="Molar Superior 6" coords="335,256,15">          
+        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Inferior 1" name="Molar Inferior 1" coords="60,375,12">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Inferior 2" name="Molar Inferior 2" coords="72,410,12">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Inferior 3" name="Molar Inferior 3" coords="84,450,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Inferior 1" name="Premolar Inferior 1" coords="95,490,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Inferior 2" name="Premolar Inferior 2" coords="105,517,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Canino Inferior 1" name="Canino Inferior 1" coords="123,545,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Inferior 1" name="Incisivo Inferior 1" coords="153,560,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Inferior 2" name="Incisivo Inferior 2" coords="180,571,8">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Inferior 3" name="Incisivo Inferior 3" coords="203,40,8">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Incisivo Inferior 4" name="Incisivo Inferior 4" coords="230,560,8">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Canino Inferior 2" name="Canino Inferior 2" coords="260,545,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Inferior 3" name="Premolar Inferior 3" coords="275,517,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Premolar Inferior 4" name="Premolar Inferior 4" coords="285,490,10">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Inferior 4" name="Molar Inferior 4" coords="300,450,15">        
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Inferior 5" name="Molar Inferior 5" coords="312,410,12">          
+            <area shape="circle" onclick="toggleModal(this)" data-toggle="tooltip" title="Molar Inferior 6" name="Molar Inferior 6" coords="330,375,12">        
+          </map>     
 
       </div>
     </section>
@@ -133,9 +167,16 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
+
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+      
+
       $(document).ready(
         function(){
           $('[data-toggle="tooltip"]').tooltip(); 
@@ -145,8 +186,8 @@
       );
 
       function toggleModal(element){
-       //var title = 'holo' + element.getAttribute('title');
-        //$("#modalTitle").text(title);
+        var title = element.getAttribute('name');
+        $("#modalTitle").text(title);
         $('#dataInsert').modal('show');
       }
 
