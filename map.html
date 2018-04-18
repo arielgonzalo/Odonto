@@ -154,6 +154,8 @@
       </div>
     </footer>
 
+
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -180,6 +182,7 @@
       function toggleModal(element){
         var title = element.getAttribute('name');
         diente = element.getAttribute('numDiente');
+        ConsultarTratamiento();
         $("#TXttratamiento").val(tratamiento);
         $("#modalTitle").text(title);
         $('#dataInsert').modal('show');
@@ -213,11 +216,16 @@
       }
 
       function ConsultarTratamiento(){
+        obj = {
+        
+        IdDiente: diente,//$("#TxtNombre").val(),
+ 
+      }
           $.ajax({
             url: "funciones.php",
             type: "POST",
-            data: {Metodo:"MtoTratamiento", diente},
-            dataType: "text",
+            data: {Metodo:"MtoTratamiento", Objeto: JSON.stringify(obj)},
+            dataType: "JSON",
             //d representa lo que manda el servidor.
             success: function(d){
               //$("#Respuesta").html("<h>" +d+ "</h>");

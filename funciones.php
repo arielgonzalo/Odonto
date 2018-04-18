@@ -123,7 +123,6 @@ function AgregarTrabajo(){
 	$P4 = $parametros ->{'IdExpediente'};
 	$sentencia -> execute();
 	$ObjRetorno = array('Resultado' => true);
-	echo $sentencia;
 	$sentencia -> close();
 	$Conexion -> close();
 	echo json_encode($ObjRetorno,JSON_FORCE_OBJECT);
@@ -134,18 +133,25 @@ function ConsultarTratamiento(){
 	global $Conexion;
 	ConectarBD();
 	//La sentencia que le quiero mandar a la base de datos
-	$sql = $Conexion -> prepare("SELECT last 1 FROM trabajorealizado where diente = ?");
+	$sql = "SELECT  * FROM trabajorealizado where IdTrabajoRealizado=(select max(IdTrabajoRealizado) from trabajorealizado where IdDiente = ?) ";
 	//Variable para guardar los datos de ese sentencia sql cuyo parametro es la variable de conexion
-	$sql -> bind_param('s', $P1);
+	$stmt =  $Conexion -> stmt_init();
+	$stmt->prepare($sql);
+	$stmt -> bind_param('s', $P1);
 	$parametros = json_decode($_POST['Objeto']);
-	$P1 = $parametros ->{'diente'};
-	$Resultado = mysqli_query($Conexion,$sql);
+	$P1 = $parametros ->{'IdDiente'};
+	$Resultado = $stmt->get_result();
 	//mysqli_fetch_object(#Resultado) = devuelve una tabla
 	//mysqli_fetch_array(#Resultado) = devuelve un arreglo
 	//mysqli_fetch_assoc(#Resultado) = devuelve un arreglo asociativo; por ejemplo, array("IdEmpleado" => 1, "NombreEmpleado" => "Carlos")
-	while($obj = mysqli_fetch_object($Resultado)){
-		echo($obj->Tratamiento
-		);
+	while($row = $result->fetch_array(MYSQLI_NUM)){
+		
+		foreach ($row as $r)
+            {
+                print $r) ;
+            }
+		
+
 	}
 	mysqli_free_result($Resultado);
 	mysqli_close($Conexion);
@@ -161,7 +167,7 @@ switch ($_POST['Metodo']) {
 	case 'AgregarTrabajo':
 		AgregarTrabajo();
 		break;
-		case 'ConsultarTratamiento':
+		case 'MtoTratamiento':
 		ConsultarTratamiento();
 		break;
 	default:
